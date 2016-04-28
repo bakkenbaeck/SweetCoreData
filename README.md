@@ -6,9 +6,27 @@
 
 ## NSManagedObjectContext
 
-- [x] dropEntity
-- [x] countEntity
-- [x] fetchEntity
+### Drop entity
+
+```swift
+let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+context.dropEntity("User")
+```
+
+### Count entity
+
+```swift
+let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+let count = context.countEntity("User")
+```
+
+### Fetch entity
+
+```swift
+let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+let users = context.fetchEntity("User")
+```
+
 
 ## Installation
 
