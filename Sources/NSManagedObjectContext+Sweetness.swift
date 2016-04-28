@@ -46,11 +46,11 @@ extension NSManagedObjectContext {
      - parameter predicate: The predicate to be used to filter out fetched objects.
      - parameter sortDescriptors: The sortDescriptors to be used to sort out fetched objects.
      */
-    public func fetchEntity(entityName: String, predicate: NSPredicate? = nil, sortDescriptors: [NSSortDescriptor]? = nil) throws -> [NSManagedObject] {
+    public func fetchEntity<T: NSManagedObject>(entityName: String, predicate: NSPredicate? = nil, sortDescriptors: [NSSortDescriptor]? = nil) throws -> [T] {
         let request = NSFetchRequest(entityName: entityName)
         request.predicate = predicate
         request.sortDescriptors = sortDescriptors
-        let objects = try self.executeFetchRequest(request) as? [NSManagedObject] ?? [NSManagedObject]()
+        let objects = try self.executeFetchRequest(request) as? [T] ?? [T]()
         return objects
     }
 }
