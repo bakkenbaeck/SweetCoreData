@@ -23,4 +23,34 @@ extension NSManagedObjectContext {
             }
         }
     }
+
+    /**
+     Counts the elements in an entity.
+     - parameter entityName: The name of the entity to be counted.
+     - parameter predicate: The predicate to be used to filter out objects from the count.
+     */
+    public func countEntity(entityName: String, predicate: NSPredicate? = nil) -> Int {
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        fetchRequest.predicate = predicate
+        var error: NSError?
+        let count = self.countForFetchRequest(fetchRequest, error: &error)
+        if let error = error {
+            print("Count error: %@", error.description)
+        }
+        return count
+    }
+
+    /**
+     Fetchs the elements in an entity.
+     - parameter entityName: The name of the entity to be fetched.
+     - parameter predicate: The predicate to be used to filter out fetched objects.
+     - parameter sortDescriptors: The sortDescriptors to be used to sort out fetched objects.
+     */
+    public func fetchEntity(entityName: String, predicate: NSPredicate? = nil, sortDescriptors: [NSSortDescriptor]? = nil) throws -> [NSManagedObject] {
+        let request = NSFetchRequest(entityName: entityName)
+        request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
+        let objects = try self.executeFetchRequest(request) as? [NSManagedObject] ?? [NSManagedObject]()
+        return objects
+    }
 }

@@ -7,15 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1410010F1CD2987900C01F60 /* DATAStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1410010E1CD2987900C01F60 /* DATAStack.framework */; };
+		141001121CD298A200C01F60 /* DATAStack.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1410010E1CD2987900C01F60 /* DATAStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		142DEA0C1CD2996A00955D4C /* NSManagedObjectContext+SweetnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142DEA0B1CD2996A00955D4C /* NSManagedObjectContext+SweetnessTests.swift */; };
+		142DEA0F1CD299DD00955D4C /* Tests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 142DEA0D1CD299DD00955D4C /* Tests.xcdatamodeld */; };
 		144994611CD29522002D053B /* NSManagedObjectContext+Sweetness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144994601CD29522002D053B /* NSManagedObjectContext+Sweetness.swift */; };
-		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		141001111CD2989900C01F60 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				141001121CD298A200C01F60 /* DATAStack.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1410010E1CD2987900C01F60 /* DATAStack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DATAStack.framework; path = Carthage/Build/iOS/DATAStack.framework; sourceTree = "<group>"; };
+		142DEA0B1CD2996A00955D4C /* NSManagedObjectContext+SweetnessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+SweetnessTests.swift"; sourceTree = "<group>"; };
+		142DEA0E1CD299DD00955D4C /* Tests.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tests.xcdatamodel; sourceTree = "<group>"; };
 		144994601CD29522002D053B /* NSManagedObjectContext+Sweetness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Sweetness.swift"; sourceTree = "<group>"; };
 		146D72AC1AB782920058798C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146D72B11AB782920058798C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14A139B31AEFC72B00AD732F /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		14C0AF7F1BD6D4230009ECBE /* .slather.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .slather.yml; sourceTree = "<group>"; };
 		14C0AF801BD6D4230009ECBE /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		14C0AF811BD6D4230009ECBE /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -30,12 +48,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1410010F1CD2987900C01F60 /* DATAStack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142DEA101CD299F000955D4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1410010E1CD2987900C01F60 /* DATAStack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1449945D1CD294F3002D053B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +78,7 @@
 				1449945D1CD294F3002D053B /* Sources */,
 				146D72AF1AB782920058798C /* Tests */,
 				146D72941AB782920058798C /* Products */,
+				142DEA101CD299F000955D4C /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -67,8 +95,9 @@
 		146D72AF1AB782920058798C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				14A139B31AEFC72B00AD732F /* Tests.swift */,
 				146D72B01AB782920058798C /* Supporting Files */,
+				142DEA0B1CD2996A00955D4C /* NSManagedObjectContext+SweetnessTests.swift */,
+				142DEA0D1CD299DD00955D4C /* Tests.xcdatamodeld */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -105,6 +134,7 @@
 				146D72A81AB782920058798C /* Sources */,
 				146D72A91AB782920058798C /* Frameworks */,
 				146D72AA1AB782920058798C /* Resources */,
+				141001111CD2989900C01F60 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -164,8 +194,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
 				144994611CD29522002D053B /* NSManagedObjectContext+Sweetness.swift in Sources */,
+				142DEA0C1CD2996A00955D4C /* NSManagedObjectContext+SweetnessTests.swift in Sources */,
+				142DEA0F1CD299DD00955D4C /* Tests.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -270,7 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sample.$(PRODUCT_NAME:rfc1034identifier)";
@@ -300,6 +331,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		142DEA0D1CD299DD00955D4C /* Tests.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				142DEA0E1CD299DD00955D4C /* Tests.xcdatamodel */,
+			);
+			currentVersion = 142DEA0E1CD299DD00955D4C /* Tests.xcdatamodel */;
+			path = Tests.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 146D728B1AB782920058798C /* Project object */;
 }
