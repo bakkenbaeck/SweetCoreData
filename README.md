@@ -4,11 +4,11 @@
 [![License](https://img.shields.io/cocoapods/l/SweetCoreData.svg?style=flat)](https://cocoapods.org/pods/SweetCoreData)
 [![Platform](https://img.shields.io/cocoapods/p/SweetCoreData.svg?style=flat)](https://cocoapods.org/pods/SweetCoreData)
 
-## Usage
+## NSManagedObjectContext
 
-```swift
-<API>
-```
+- [x] dropEntity
+- [x] countEntity
+- [x] fetchEntity
 
 ## Installation
 
