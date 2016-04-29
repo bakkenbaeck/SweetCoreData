@@ -20,7 +20,7 @@ let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
 let count = context.countEntity("User")
 ```
 
-### Fetch entity
+### Fetch entity (with generics)
 
 ```swift
 let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
