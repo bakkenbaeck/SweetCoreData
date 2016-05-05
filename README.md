@@ -27,7 +27,6 @@ let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
 let users: [User] = context.fetchEntity("User")
 ```
 
-
 ## Installation
 
 **SweetCoreData** is available through [CocoaPods](http://cocoapods.org). To install
