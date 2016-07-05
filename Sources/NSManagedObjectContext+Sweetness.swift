@@ -6,17 +6,17 @@ extension NSManagedObjectContext {
      - parameter entityName: The name of the entity to be dropped.
      - parameter predicate: The predicate to be used to filter out removed objects (optional).
      */
-    public func dropEntity(entityName: String, predicate: NSPredicate? = nil) throws {
+    public func dropEntity(_ entityName: String, predicate: Predicate? = nil) throws {
         let request = NSFetchRequest(entityName: entityName)
         request.predicate = predicate
 
         if #available(iOS 9.0, OSX 10.11, *) {
             let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: request)
-            try self.executeRequest(batchDeleteRequest)
+            try self.execute(batchDeleteRequest)
         } else {
-            let objects = try self.executeFetchRequest(request) as? [NSManagedObject] ?? [NSManagedObject]()
+            let objects = try self.fetch(request) as? [NSManagedObject] ?? [NSManagedObject]()
             for object in objects {
-                self.deleteObject(object)
+                self.delete(object)
             }
             if self.hasChanges {
                 try self.save()
@@ -30,7 +30,7 @@ extension NSManagedObjectContext {
      - parameter predicate: The predicate to be used to filter out objects from the count.
      - returns: The amount of items in the provided entity.
      */
-    public func countEntity(entityName: String, predicate: NSPredicate? = nil) -> Int {
+    public func countEntity(_ entityName: String, predicate: Predicate? = nil) -> Int {
         let fetchRequest = NSFetchRequest(entityName: entityName)
         fetchRequest.predicate = predicate
         var error: NSError?
@@ -48,11 +48,11 @@ extension NSManagedObjectContext {
      - parameter sortDescriptors: The sortDescriptors to be used to sort out fetched objects.
      - returns: The objects fetched for the requested entity.
      */
-    public func fetchEntity<T: NSManagedObject>(entityName: String, predicate: NSPredicate? = nil, sortDescriptors: [NSSortDescriptor]? = nil) throws -> [T] {
+    public func fetchEntity<T: NSManagedObject>(_ entityName: String, predicate: Predicate? = nil, sortDescriptors: [SortDescriptor]? = nil) throws -> [T] {
         let request = NSFetchRequest(entityName: entityName)
         request.predicate = predicate
         request.sortDescriptors = sortDescriptors
-        let objects = try self.executeFetchRequest(request) as? [T] ?? [T]()
+        let objects = try self.fetch(request) as? [T] ?? [T]()
         return objects
     }
 }
