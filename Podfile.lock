@@ -1,0 +1,22 @@
+PODS:
+  - DATAStack (6.0.0-beta1)
+
+DEPENDENCIES:
+  - DATAStack (from `git@github.com:3lvis/DATAStack.git`, branch `feature/swift-3`)
+
+EXTERNAL SOURCES:
+  DATAStack:
+    :branch: feature/swift-3
+    :git: git@github.com:3lvis/DATAStack.git
+
+CHECKOUT OPTIONS:
+  DATAStack:
+    :commit: 18ee8c2c950c969ce1069f1adc7260adc66bc59a
+    :git: git@github.com:3lvis/DATAStack.git
+
+SPEC CHECKSUMS:
+  DATAStack: 8051a46f5047f8ecdb9aa24b2949384f885027d0
+
+PODFILE CHECKSUM: 9d6a525a4e15ae0edaf9f51d2b4a0271923a6e80
+
+COCOAPODS: 1.0.1
