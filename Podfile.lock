@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   DATAStack:
-    :commit: 18ee8c2c950c969ce1069f1adc7260adc66bc59a
+    :commit: a137b1a186fadeb2a4f007bd866daa791f8604fc
     :git: git@github.com:3lvis/DATAStack.git
 
 SPEC CHECKSUMS:

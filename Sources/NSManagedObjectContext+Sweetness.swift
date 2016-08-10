@@ -6,7 +6,7 @@ extension NSManagedObjectContext {
      - parameter entityName: The name of the entity to be dropped.
      - parameter predicate: The predicate to be used to filter out removed objects (optional).
      */
-    public func dropEntity(_ entityName: String, predicate: Predicate? = nil) throws {
+    public func dropEntity(_ entityName: String, predicate: NSPredicate? = nil) throws {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         request.predicate = predicate
 
@@ -30,7 +30,7 @@ extension NSManagedObjectContext {
      - parameter predicate: The predicate to be used to filter out objects from the count.
      - returns: The amount of items in the provided entity.
      */
-    public func countEntity(_ entityName: String, predicate: Predicate? = nil) -> Int {
+    public func countEntity(_ entityName: String, predicate: NSPredicate? = nil) -> Int {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.predicate = predicate
 
@@ -50,7 +50,7 @@ extension NSManagedObjectContext {
      - parameter sortDescriptors: The sortDescriptors to be used to sort out fetched objects.
      - returns: The objects fetched for the requested entity.
      */
-    public func fetchEntity<T: NSManagedObject>(_ entityName: String, predicate: Predicate? = nil, sortDescriptors: [SortDescriptor]? = nil) throws -> [T] {
+    public func fetchEntity<T: NSManagedObject>(_ entityName: String, predicate: NSPredicate? = nil, sortDescriptors: [NSSortDescriptor]? = nil) throws -> [T] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         request.predicate = predicate
         request.sortDescriptors = sortDescriptors
