@@ -1,1 +1,1 @@
-Check https://github.com/bakkenbaeck/SweetCoreData/releases for more information.
+Check https://github.com/SweetOrg/SweetCoreData/releases for more information.

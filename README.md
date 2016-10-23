@@ -40,7 +40,7 @@ pod 'SweetCoreData'
 it, simply add the following line to your Cartfile:
 
 ```ruby
-github "bakkenbaeck/SweetCoreData"
+github "SweetOrg/SweetCoreData"
 ```
 
 ## License
@@ -49,4 +49,4 @@ github "bakkenbaeck/SweetCoreData"
 
 ## Author
 
-Bakken & Bæck, [@bakkenbaeck](https://twitter.com/bakkenbaeck)
+Bakken & Bæck, [@SweetOrg](https://twitter.com/SweetOrg)
