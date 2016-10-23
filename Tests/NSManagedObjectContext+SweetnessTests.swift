@@ -4,22 +4,22 @@ import DATAStack
 
 class NSManagedObjectContext_SweetnessTests: XCTestCase {
     func testDropEntity() {
-        let stack = DATAStack(modelName: "Tests", bundle: NSBundle(forClass: NSManagedObjectContext_SweetnessTests.self), storeType: .SQLite)
+        let stack = DATAStack(modelName: "Tests", bundle: Bundle(for: NSManagedObjectContext_SweetnessTests.self), storeType: .sqLite)
         try! stack.mainContext.dropEntity("User")
-        stack.drop()
+        try! stack.drop()
     }
 
     func testCountEntity() {
-        let stack = DATAStack(modelName: "Tests", bundle: NSBundle(forClass: NSManagedObjectContext_SweetnessTests.self), storeType: .SQLite)
-        let count = stack.mainContext.countEntity("User")
+        let stack = DATAStack(modelName: "Tests", bundle: Bundle(for: NSManagedObjectContext_SweetnessTests.self), storeType: .sqLite)
+        let count = try! stack.mainContext.countEntity("User")
         print(count)
-        stack.drop()
+        try! stack.drop()
     }
 
     func testFetchEntity() {
-        let stack = DATAStack(modelName: "Tests", bundle: NSBundle(forClass: NSManagedObjectContext_SweetnessTests.self), storeType: .SQLite)
+        let stack = DATAStack(modelName: "Tests", bundle: Bundle(for: NSManagedObjectContext_SweetnessTests.self), storeType: .sqLite)
         let users = try! stack.mainContext.fetchEntity("User")
         print(users)
-        stack.drop()
+        try! stack.drop()
     }
 }
